@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import time
-import datetime
 import commands
 
 
@@ -10,7 +9,7 @@ def execute(command):
     if status != 0:
         print('ERROR: Command %s gave status %s and output %s' %(command, status, output))
     else:
-        print('INFO: This worked.')
+        print(output)
 
 while True:
     execute("/app/stockreport.py")
