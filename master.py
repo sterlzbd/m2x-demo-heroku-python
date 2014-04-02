@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
-import os
-from flask import Flask
+import time
+import datetime
 
-app = Flask(__name__)
+while True:
+    print(datetime.datetime.now())
+    time.sleep(5)
 
-@app.route('/')
-def hello():
-    return 'Hello World!'
