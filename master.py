@@ -11,7 +11,7 @@ def execute(command):
         print('ERROR: Command %s gave status %s and output %s' %(command, status, output))
 
 while True:
-    execute(stockreport.py)
+    execute("/app/stockreport.py")
     # execute(loadreport.rb)
     time.sleep(60)
 
