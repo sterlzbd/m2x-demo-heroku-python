@@ -11,7 +11,9 @@ def execute(command):
     else:
         print(output)
 
+print('about to enter the loop')
 while True:
+    print('Trying another loop')
     execute("/app/stockreport.py")
     # execute(loadreport.rb)
     time.sleep(60)
