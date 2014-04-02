@@ -1,1 +1,1 @@
-web: python master.py
+clock: python master.py
