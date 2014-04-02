@@ -9,6 +9,20 @@ import subprocess
 
 WORKING_DIR = os.path.dirname(os.path.realpath(__file__))
 
+# This is necessary to get unbuffered output. We want unbuffered output so each line we print gets a
+# timestamp from Heroku at the correct time. Otherwise all will have the same timestamp when the program exits.
+class Unbuffered(object):
+   def __init__(self, stream):
+       self.stream = stream
+   def write(self, data):
+       self.stream.write(data)
+       self.stream.flush()
+   def __getattr__(self, attr):
+       return getattr(self.stream, attr)
+
+sys.stdout = Unbuffered(sys.stdout)
+sys.stderr = Unbuffered(sys.stderr)
+
 def execute(command):
     p = subprocess.Popen(command, shell=True, stderr=subprocess.PIPE)
     while True:
