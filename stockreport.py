@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 
-import time
 import datetime
 
 import ystockquote
 from m2x.client import M2XClient
 
-TIMEFORMAT = "%Y-%m-%d %H:%M:%S"
-print("%s: Starting stockreport.py run" % time.strftime(TIMEFORMAT))
+print("Starting stockreport.py run")
 
 BLUEPRINT_NAME = "stockreport-heroku"
 
@@ -47,4 +45,4 @@ stream.update(unit={'label': 'Dollars', 'symbol': '$'})
 
 stream.values.add_value(ATT_Stock_Price, now)
 
-print("%s: Ending stockreport.py run" % time.strftime(TIMEFORMAT))
+print("Ending stockreport.py run")
