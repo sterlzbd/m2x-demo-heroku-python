@@ -1,18 +1,35 @@
 #!/usr/bin/env python
 
+import sys
+import time
+import os.path
 import datetime
 
 import ystockquote
 from m2x.client import M2XClient
 
+# This is necessary to get unbuffered output. We want unbuffered output so each line we print gets a
+# timestamp from Heroku at the correct time. Otherwise all will have the same timestamp when the program exits.
+class Unbuffered(object):
+   def __init__(self, stream):
+       self.stream = stream
+   def write(self, data):
+       self.stream.write(data)
+       self.stream.flush()
+   def __getattr__(self, attr):
+       return getattr(self.stream, attr)
+
+sys.stdout = Unbuffered(sys.stdout)
+sys.stderr = Unbuffered(sys.stderr)
+
+
 print("Starting stockreport.py run")
-
 BLUEPRINT_NAME = "stockreport-heroku"
+WORKING_DIR = os.path.dirname(os.path.realpath(__file__))
 
-# Load config
-APIKEY = open('/app/m2x_api_key.txt').read().strip()
-now = datetime.datetime.now()
-ATT_Stock_Price = ystockquote.get_price('T')
+APIKEY = open(os.path.join(WORKING_DIR, 'm2x_api_key.txt')).read().strip()
+NOW = datetime.datetime.now()
+ATT_STOCK_PRICE = ystockquote.get_price('T')
 
 # Now let's create a blueprint:
 client = M2XClient(key=APIKEY)
@@ -43,6 +60,6 @@ if not ATT_Stream_Exists:
 
 stream.update(unit={'label': 'Dollars', 'symbol': '$'})
 
-stream.values.add_value(ATT_Stock_Price, now)
+stream.values.add_value(ATT_STOCK_PRICE, NOW)
 
 print("Ending stockreport.py run")
