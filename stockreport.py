@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
+import os
 import time
+
 import datetime
 
 import ystockquote
@@ -10,11 +12,10 @@ from m2x.client import M2XClient
 TIMEFORMAT = "%Y-%m-%d %H:%M:%S"
 print("%s: Starting stockreport.py run" % time.strftime(TIMEFORMAT))
 
-BLUEPRINT_NAME = "stockreport-vagrant"
-
+BLUEPRINT_NAME = "stockreport-heroku"
 
 # Load config
-APIKEY = open('/vagrant/m2x_api_key.txt').read().strip()
+APIKEY = open('m2x_api_key.txt').read().strip()
 now = datetime.datetime.now()
 ATT_Stock_Price = ystockquote.get_price('T')
 

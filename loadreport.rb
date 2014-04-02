@@ -2,12 +2,12 @@
 
 require "m2x"
 TIMEFORMAT = "%Y-%m-%d %H:%M:%S"
-BPNAME = "loadreport-vagrant"
+BPNAME = "loadreport-heroku"
 
 
 puts Time.now.strftime(TIMEFORMAT) + ": Starting loadreport.rb run"
 
-APIKEY = File.read('/vagrant/m2x_api_key.txt').strip
+APIKEY = File.read(ENV['HOME'] + '/m2x_api_key.txt').strip
 
 m2x = M2X.new(APIKEY)
 

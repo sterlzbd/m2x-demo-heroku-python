@@ -1,6 +1,5 @@
-heroku==0.1.4
 iso8601==0.1.8
 m2x==0.3
-python-dateutil==1.5
 requests==2.0.1
 wsgiref==0.1.2
+ystockquote==0.2.4
