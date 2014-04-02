@@ -1,1 +1,1 @@
-web: python master.py
+web: python /app/master.py
