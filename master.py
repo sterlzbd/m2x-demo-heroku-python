@@ -6,7 +6,6 @@ import time
 import os.path
 import subprocess
 
-
 WORKING_DIR = os.path.dirname(os.path.realpath(__file__))
 
 # This is necessary to get unbuffered output. We want unbuffered output so each line we print gets a
@@ -22,6 +21,8 @@ class Unbuffered(object):
 
 sys.stdout = Unbuffered(sys.stdout)
 sys.stderr = Unbuffered(sys.stderr)
+
+print('This is a line.')
 
 def execute(command):
     p = subprocess.Popen(command, shell=True, stderr=subprocess.PIPE)
