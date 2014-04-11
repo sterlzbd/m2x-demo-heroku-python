@@ -14,7 +14,7 @@ You will need to have an account on [Heroku](https://www.heroku.com/). Because t
 
 You will also need an account on AT&amp;T's M2X service ([m2x.att.com](https://m2x.att.com)), which is currently free to everyone. (Future plans call for M2X to keep a free "Developer" plan, but to charge for very large volumes of data.)
 
-You will need the (Heroku Toolbelt)[https://toolbelt.heroku.com/] installed and configured with your Heroku login credentials.
+You will need the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed and configured with your Heroku login credentials.
 
 ## Installation
 
