@@ -39,7 +39,6 @@ git push heroku master
 ```
 
 ### Scaling Your Application
-```
 Now your code should be uploaded. However, because you're using the "Clock" process type, your code isn't running automatically. You'll need to scale the number of clock workers to 1:
 
 ```
