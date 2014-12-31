@@ -29,7 +29,7 @@ heroku apps:create APPNAME
 
 ### M2X API Key
 
-Next you'll need to get your M2X API Master Key. Log into M2X, and click your name in the upper right-hand corner, then the "Account Settings" dropdown, then the "Master Keys" tab. [Here's a direct link](https://m2x.att.com/account#master-keys-tab). Copy the Master Key and paste it into the m2x_api_key.txt file. It's just the API key, by itself, in a text file.
+Next you'll need to get your M2X API Master Key. Log into M2X, and click your name in the upper right-hand corner, then the "Account Settings" dropdown, then the "Master Keys" tab. [Here's a direct link](https://m2x.att.com/account#master-keys). Copy the Master Key and paste it into the m2x_api_key.txt file. It's just the API key, by itself, in a text file.
 
 Then you'll need to send those changes to Heroku:
 
