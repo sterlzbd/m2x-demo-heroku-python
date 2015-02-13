@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This repo provides a framework for a Heroku application with Python code that reports data to AT&T M2X. The application reports the current stock price of AT&T's stock (ticker symbol "T") every minute.
+This repo provides a framework for a [Heroku](https://www.heroku.com) application with Python code that reports data to [AT&T M2X](https://m2x.att.com). The application reports the current stock price of AT&T's stock (ticker symbol "T") every minute.
 
 Please note that the Heroku machine and M2X are using times in UTC, not in your local time zone.
 
