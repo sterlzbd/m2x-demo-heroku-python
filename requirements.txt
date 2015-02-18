@@ -1,5 +1,2 @@
-iso8601==0.1.8
-m2x==2.0.3
-requests==2.0.1
-wsgiref==0.1.2
+m2x==3.0.2
 ystockquote==0.2.4
